@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital clock</title>
+
+
+    <style>
+*{margin: 0;
+padding: 0;
+box-sizing: border-box;}
+#clock{
+    height: 100vh;
+    width: 100vw;
+    /* border: 1px solid red; */
+    background-color: black;
+    color: rgb(9, 219, 26);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    flex-direction: column;
+
+}
+
+    </style>
+
+</head>
+
+<body>
+    <div id="clock">
+        <div id="upperClock">
+            <span id="hr"></span>:
+            <span id="min"></span>:
+            <span id="sec"></span>
+            <!-- <span id="AMPM"></span>PM -->
+        </div>
+        <div id="lowerClock"> 
+            <span id="day"></span>
+            <span id="date"></span>/
+            <span id="month"></span>/
+            <span id="year"></span>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+
+
+
+
+
+
+        // setTimeout(() => {
+        //     console.log('Exicuted after 3s')
+        // }, 3000
+
+        // )
+
+        setInterval(() => {
+            // console.log('Excuted every after 3sec')
+            var d = new Date();
+            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'dec']
+
+            var day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thus', 'Fri', 'Sat']
+
+
+
+
+            document.querySelector('#hr').innerHTML = d.getHours();
+            document.querySelector('#min').innerHTML = d.getMinutes();
+            document.querySelector('#sec').innerHTML = d.getSeconds();
+
+            document.querySelector('#day').innerHTML = day[d.getDay()];
+            document.querySelector('#date').innerHTML = d.getDate();
+            document.querySelector('#month').innerHTML = months[d.getMonth()];
+            document.querySelector('#year').innerHTML = d.getFullYear();
+
+
+            // if(d.getHours >= 12){
+            //     document.querySelector('#ampm').innerHTML=PM
+            // }
+            // else{
+            //     document.querySelector('#ampm').innerHTML=AM
+            // }
+
+        }, 1000)
+
+
+
+
+// creating the object of date
+// console.log('The current year is :', d.getFullYear())
+// console.log('The current count of secend is:', d.getSeconds())
+// console.log('The current count of milisecend is:', d.getMilliseconds())
+// console.log(d.getMinutes())
+// console.log(d.getHours())
+// console.log(d.getDay())
+// console.log(d.getMonth()+1)
+    </script>
+</body>
+
+</html>
